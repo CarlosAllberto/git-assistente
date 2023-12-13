@@ -134,10 +134,12 @@ class git_assistente:
 
 
     # verifica se o repositório tem alguma atualização pedente
-    def verify_pull(self):
+    def verify_pull(self, cmd_result=""):
         try:
-            cmd("git fetch")
-            cmd_result = str(cmd("git status").stdout, encoding="utf-8")
+            if cmd_result == "":
+                cmd("git fetch")
+                cmd_result = str(cmd("git status").stdout, encoding="utf-8")
+            
             if "git pull" in cmd_result:
                 print("O projeto tem atualizaçãoes mais recentes no GitHub que devemos trazer para a sua máquina.")
                 print("Isso pode fazer com que algumas coisas possam ser sobreescritas.\n")
@@ -183,6 +185,9 @@ class git_assistente:
                 return print(f"{green}[+] Projeto subiu no GitHub com sucesso!{reset}")
             if "Everything up-to-date" in cmd_result:
                 return print("Seu projeto não tem nenhuma atualização para subir.")
+            if self.verify_pull(cmd_result):
+                self.pull()
+            
             print("Nâo foi possivel subir o projeto no GitHub.")
         except:
             exit("Erro ao subir o projeto no GitHub.")
