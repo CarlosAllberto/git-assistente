@@ -11,6 +11,11 @@
 Um Assistente do Git criado para ajudar, automatizar e ser mais produtivo.
 Script criado para iniciantes aprenderem a usar o Git (por isso sempre retorna os comandos usados) e também profissionais serem mais rápidos (pelo fato de ser muito rápido).
 
+<div align=center>
+  <img src="./assets/print.png" width="70%"/>
+</div>
+<br/><br/>
+
 ## Instalação:
 
 ```
