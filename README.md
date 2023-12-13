@@ -1,5 +1,5 @@
 <div align=center>
-  <img src="./assets/banner.png" width="75%"/>
+  <img src="./assets/logo.png" width="300px"/>
 </div>
 
 ## License
@@ -10,12 +10,6 @@
 
 Um Assistente do Git criado para ajudar, automatizar e ser mais produtivo.
 Script criado para iniciantes aprenderem a usar o Git (por isso sempre retorna os comandos usados) e também profissionais serem mais rápidos (pelo fato de ser muito rápido).
-
-<div align=center style="display: flex;">
-  <img src="./assets/img.png" width="70%"/>
-  <img src="./assets/android.jpg" width="20%"/>
-</div>
-<br/><br/>
 
 ## Instalação:
 
