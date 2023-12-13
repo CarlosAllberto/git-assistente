@@ -138,7 +138,7 @@ class git_assistente:
         try:
             cmd("git fetch")
             cmd_result = str(cmd("git status").stdout, encoding="utf-8")
-            if "use \"git pull\" to merge the remote branch into yours" in cmd_result:
+            if "git pull" in cmd_result:
                 print("O projeto tem atualizaçãoes mais recentes no GitHub que devemos trazer para a sua máquina.")
                 print("Isso pode fazer com que algumas coisas possam ser sobreescritas.\n")
                 if check_response("Deseja trazer as atualizações para sua máquina?"):
