@@ -17,7 +17,7 @@ art = """
 
 def banner():
     print(align(f"{Fore.BLUE}{art}{Fore.RESET}\n"))
-    print(align(f"{Fore.YELLOW}[-]              Version: 0.1.3              [-]{Fore.RESET}"))
+    print(align(f"{Fore.YELLOW}[-]              Version: 0.1.4              [-]{Fore.RESET}"))
     print(align(f"{Fore.YELLOW}[-]          Author: CarlosAllberto          [-]{Fore.RESET}"))
     print(align(f"{Fore.YELLOW}[-]   GitHub: www.github.com/CarlosAllberto  [-]{Fore.RESET}"))
     print(align(f"[*]            *****************             [*]"))

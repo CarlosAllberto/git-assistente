@@ -4,7 +4,7 @@ with open("README.md", "r") as arq:
     readme = arq.read()
 
 setup(name='git_assistente',
-    version='0.1.3',
+    version='0.1.4',
     license='MIT License',
     author='CarlosAllberto',
     long_description=readme,

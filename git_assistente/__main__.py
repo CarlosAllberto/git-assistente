@@ -181,7 +181,7 @@ class git_assistente:
                 clear()
 
             cmd_result = str(cmd("git push origin main").stdout, encoding="utf-8")
-            if "main -> main" in cmd_result:
+            if "completed" in cmd_result:
                 return print(f"{green}[+] Projeto subiu no GitHub com sucesso!{reset}")
             if "Everything up-to-date" in cmd_result:
                 return print("Seu projeto não tem nenhuma atualização para subir.")
