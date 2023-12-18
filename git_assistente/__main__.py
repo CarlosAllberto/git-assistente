@@ -181,13 +181,19 @@ class git_assistente:
                 clear()
 
             cmd_result = str(cmd("git push origin main").stdout, encoding="utf-8")
-            if "completed" in cmd_result:
+
+            repository_name = get_repository_name()
+
+            if f"To https://github.com/{self.name}/{repository_name}.git" in cmd_result:
                 return print(f"{green}[+] Projeto subiu no GitHub com sucesso!{reset}")
+            
             if "Everything up-to-date" in cmd_result:
                 return print("Seu projeto não tem nenhuma atualização para subir.")
+            
             if self.verify_pull(cmd_result):
                 self.pull()
-            
+                self.push()
+
             print("Nâo foi possivel subir o projeto no GitHub.")
         except:
             exit("Erro ao subir o projeto no GitHub.")
