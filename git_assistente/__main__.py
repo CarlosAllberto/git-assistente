@@ -106,7 +106,6 @@ class git_assistente:
   def verify_commit(self):
     try:
       result = str(cmd_print("git fetch && git status -uno").stdout, encoding="utf-8")
-      print(result)
       if "nothing to commit" in result:
         return print("Seu projeto não tem nenhuma atualização para dar commit.")
       return True
