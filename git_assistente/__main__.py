@@ -16,6 +16,18 @@ green = Fore.GREEN
 dim = Style.DIM
 reset = Fore.RESET
 
+message_token = f"""
+[INFO]: Faça a criação do seu token em https://github.com/settings/tokens\n
+{dim}[DICA]: Você pode seguir as etapas abaixo: 
+0 - Abra o link acima
+1 - Clique em \"Generate new token\"
+2 - Escolha a opção classic
+3 - Marque todas as caixinhas
+4 - Gere seu token.
+5 - Guarde o token. O git vai pedir nestante.{reset}\n
+[OBS]: o token sera salvo e não sera pedido novamente.\n
+"""
+
 class git_assistente:
   def __init__(self):
     system("clear")
@@ -149,16 +161,7 @@ class git_assistente:
   def push(self):
     try:
       if self.is_first:
-        print("[INFO]: Faça a criação do seu token em https://github.com/settings/tokens\n")
-        print(f"""{dim}[DICA]: Você pode seguir as etapas abaixo: 
-        0 - Abra o link acima
-        1 - Clique em \"Generate new token\"
-        2 - Escolha a opção classic
-        3 - Marque todas as caixinhas
-        4 - Gere seu token.
-        5 - Guarde o token. O git vai pedir nestante.{reset}\n
-        """)
-        print("[OBS]: o token sera salvo e não sera pedido novamente.\n")
+        print(message_token)
         clear()
 
       if self.verify_pull():
