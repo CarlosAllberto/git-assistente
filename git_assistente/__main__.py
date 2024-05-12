@@ -171,7 +171,9 @@ class git_assistente:
 
       if self.verify_pull(result):
         self.pull()
-        result = str(cmd_print("git push origin main").stdout, encoding="utf-8")
+        self.push()
+      
+      result = str(cmd_print("git push origin main").stdout, encoding="utf-8")
 
       repository_name = get_repository_name()
 
