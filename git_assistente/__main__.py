@@ -169,7 +169,9 @@ class git_assistente:
         print("[OBS]: o token sera salvo e não sera pedido novamente.\n")
         clear()
 
-      result = str(cmd_print("git push origin main").stdout, encoding="utf-8")
+      if self.verify_pull(result):
+        self.pull()
+        result = str(cmd_print("git push origin main").stdout, encoding="utf-8")
 
       repository_name = get_repository_name()
 
@@ -178,10 +180,6 @@ class git_assistente:
       
       if "Everything up-to-date" in result:
         return print("Seu projeto não tem nenhuma atualização para subir.")
-      
-      if self.verify_pull(result):
-        self.pull()
-        self.push()
 
       print("Nâo foi possivel subir o projeto no GitHub.")
     except:
