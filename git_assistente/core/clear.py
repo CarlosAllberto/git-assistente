@@ -1,4 +1,5 @@
-from git_assistente.utils.banner import banner
+from utils.banner import banner
+# from git_assistente.utils.banner import banner
 from os import system
 from time import sleep
 
