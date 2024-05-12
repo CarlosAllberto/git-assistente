@@ -127,16 +127,17 @@ class git_assistente:
 
 
   # verifica se o repositório tem alguma atualização pedente
-  def verify_pull(self, result=""):
+  def verify_pull(self):
     try:        
+      result = str(cmd_print("git fetch && git status").stdout, encoding="utf-8")
+      
       if "git pull" in result:
-        print("O projeto tem atualizaçãoes mais recentes no GitHub que devemos trazer para a sua máquina.")
+        print("O projeto tem atualizaçãoes mais recentes no GitHub que devemos trazer para a sua máquina antes de subir o projeto.")
         print("Isso pode fazer com que algumas coisas possam ser sobreescritas.\n")
         if check_response("Deseja trazer as atualizações para sua máquina?"):
           return True
         exit("Não é possivel subir as atualizações para o GitHub sem antes trazer as modificações.")
      
-      result = str(cmd_print("git fetch && git status").stdout, encoding="utf-8")
     except:
         exit("Erro ao verificar atualização no GitHub.")
 
@@ -169,7 +170,7 @@ class git_assistente:
         print("[OBS]: o token sera salvo e não sera pedido novamente.\n")
         clear()
 
-      if self.verify_pull(result):
+      if self.verify_pull():
         self.pull()
         self.push()
       
