@@ -16,12 +16,6 @@ green = Fore.GREEN
 dim = Style.DIM
 reset = Fore.RESET
 
-# 1 - Verifica se é a primeira utilização do assistente
-# 2 - Verifica se o diretório existe no Github
-# 3 - Verifica se o projeto precisar de pull
-# 4 - Comita o projeto
-# 5 - Sobe o projeto
-
 class git_assistente:
   def __init__(self):
     system("clear")
@@ -42,7 +36,6 @@ class git_assistente:
 
     cmd("git config --global credential.helper store")
     cmd("git config --global pull.rebase true")
-    print(f"{green}[+] Configuraçãoes de ajuda feitas{reset}")
 
 
   # boas vindas
@@ -172,7 +165,6 @@ class git_assistente:
         self.pull()
       
       result = str(cmd_print("git push origin main").stdout, encoding="utf-8")
-      print(result)
 
       repository_name = get_repository_name()
 
