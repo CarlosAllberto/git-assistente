@@ -3,12 +3,13 @@
 import requests 
 from sys import exit
 from colorama import Fore, Style
-from core.cmd import cmd, cmd_print
-from core.get_repository_name import get_repository_name
-from core.typewriter import typewriter
-from core.check_response import check_response
-from core.clear import clear
-from utils.banner import banner
+
+from git_assistente.core.cmd import cmd, cmd_print
+from git_assistente.core.get_repository_name import get_repository_name
+from git_assistente.core.typewriter import typewriter
+from git_assistente.core.check_response import check_response
+from git_assistente.core.clear import clear
+from git_assistente.utils.banner import banner
 
 red = Fore.RED
 green = Fore.GREEN
@@ -24,7 +25,7 @@ message_token = f"""
 3 - Marque todas as caixinhas
 4 - Gere seu token.
 5 - Guarde o token. O git vai pedir nestante.{reset}\n
-[OBS]: o token sera salvo e não sera pedido novamente.\n
+[OBS]: o token sera salvo e não sera pedido novamente.
 """
 
 class git_assistente:
