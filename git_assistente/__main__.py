@@ -176,7 +176,7 @@ class git_assistente:
 
       repository_name = get_repository_name()
 
-      if f"To https://github.com/{self.name}/{repository_name}.git" in result:
+      if f"To https://github.com/{self.name}/{repository_name}" in result:
         return print(f"{green}[+] Projeto subiu no GitHub com sucesso!{reset}")
       
       if "Everything up-to-date" in result:
