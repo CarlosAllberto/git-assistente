@@ -1,5 +1,6 @@
 from colorama import Fore
 from dankware import align
+from os import system
 
 art = """
 ⠀⠀⠀⣤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⠀⠀⠀
@@ -16,6 +17,7 @@ art = """
 """
 
 def banner():
+    system("clear")
     print(f"{Fore.GREEN}{art}{Fore.RESET}\n")
     # print(align(f"{Fore.YELLOW}[-]              Version: 0.1.8              [-]{Fore.RESET}"))
     # print(align(f"{Fore.YELLOW}[-]          Author: CarlosAllberto          [-]{Fore.RESET}"))

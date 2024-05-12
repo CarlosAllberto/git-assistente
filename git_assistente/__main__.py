@@ -2,7 +2,6 @@
 
 import requests 
 from sys import exit
-from os import system
 from colorama import Fore, Style
 from core.cmd import cmd, cmd_print
 from core.get_repository_name import get_repository_name
@@ -30,7 +29,6 @@ message_token = f"""
 
 class git_assistente:
   def __init__(self):
-    system("clear")
     banner()
 
     git_config = {}
