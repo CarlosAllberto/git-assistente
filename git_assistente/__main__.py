@@ -182,7 +182,8 @@ class git_assistente:
         return print("Seu projeto não tem nenhuma atualização para subir.")
 
       print("Nâo foi possivel subir o projeto no GitHub.")
-    except:
+    except Exception as error:
+      print(error)
       exit("Erro ao subir o projeto no GitHub.")
   
   
