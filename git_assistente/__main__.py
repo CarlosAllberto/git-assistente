@@ -146,8 +146,6 @@ class git_assistente:
   def pull(self):
     try:
       result = str(cmd_print("git pull origin main").stdout, encoding="utf-8")
-      if "Already up to date." in result:
-        return print("Nada para atualizar.")
       if "Successfully rebased and updated" in result:
         print(f"{green}[+] Modificações do GitHub puxadas para a sua maquina.{reset}")
     except:
@@ -172,10 +170,10 @@ class git_assistente:
 
       if self.verify_pull():
         self.pull()
-        self.push()
       
       result = str(cmd_print("git push origin main").stdout, encoding="utf-8")
-
+      print(result)
+      
       repository_name = get_repository_name()
 
       if f"To https://github.com/{self.name}/{repository_name}.git" in result:
