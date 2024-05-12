@@ -45,7 +45,7 @@ class git_assistente:
     print(f"{green}[+] Configuraçãoes de ajuda feitas{reset}")
 
 
-  # verifica se é primeira vez usando o assistente
+  # boas vindas
   def first(self):
     if self.is_first:
       typewriter("Olá, sou seu novo assistente do Git. \ncomo parece ser sua primeira vez usando o Git preciso saber quem é você.\n")
