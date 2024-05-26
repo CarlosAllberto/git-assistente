@@ -4,7 +4,7 @@ with open("README.md", "r") as arq:
     readme = arq.read()
 
 setup(name='git_assistente',
-    version='0.1.9',
+    version='0.2.0',
     license='MIT License',
     author='CarlosAllberto',
     long_description=readme,
@@ -14,4 +14,4 @@ setup(name='git_assistente',
     description='Um assistente do Git para subir projetos no GitHub',
     packages=find_packages(),
     install_requires=['colorama', 'dankware'],
-    entry_points={"console_scripts": ["git_assistente = git_assistente.__main__:main"]},)
+    entry_points={"console_scripts": ["git-assistente = git_assistente.__main__:main"]},)
